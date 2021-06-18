@@ -2,17 +2,9 @@
 
 ### MongoDB
 
-- Must be change your connection string (index.js)
+- Must be add (dev.js) in config folder
   ```
-  const { YOUR_CONNECTION_STRING } = require("./privacy/mongo");
-  ```
-  - Make ./privacy/mongo.js
-  ```
-  module.export = {
-      YOUR_CONNECTION_STRING: " Put your connection string here! "
-  }
-  ```
-  - Or modify index.js
-  ```
-  const YOUR_CONNECTION_STRING = " Put your connection string here! "
+  module.exports = {
+    mongoURI: " Put your connection string here! ",
+  };
   ```

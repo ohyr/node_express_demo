@@ -1,17 +1,17 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+
+const config = require("./config/key");
+
 const { User } = require("./models/User");
 
 app.use(express.urlencoded({ extended: true }));
-
 app.use(express.json());
-
-const { YOUR_CONNECTION_STRING } = require("./privacy/mongo");
 
 const mongoose = require("mongoose");
 mongoose
-  .connect(YOUR_CONNECTION_STRING, {
+  .connect(config.mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
